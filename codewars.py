@@ -48,3 +48,20 @@ print(test) # [ 1 , 2 ]
 def solution(text, ending):
     # your code here...
     return text.endswith(ending)
+
+
+
+
+#  // List filtering Problem ,         EASY but had difficulty remembering different python methods to get it going
+
+# In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+
+# Example
+# filter_list([1,2,'a','b']) == [1,2]
+# filter_list([1,'a','b',0,15]) == [1,0,15]
+# filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
+
+
+def filter_list(l):
+    #makes sure test is a integer, filtering out the other components in the array
+    return [test for test in l if type(test) == int]
