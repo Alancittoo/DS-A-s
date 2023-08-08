@@ -59,16 +59,17 @@ class Solution(object):
         }
 
         res = 0
-        x = 0
+        prev = 0
 
         for num in s:
-            current_value = romans[num]
-
-            if current_value > x:
-                res += current_value - 2 * x
+            curr = romans[num]
+            # if its before to subtract
+            if curr > prev:
+                res += curr - 2 * prev
+            # else add onto it like normal
             else:
-                res += current_value
-
-            x = current_value
+                res += curr
+            #replace prev with curr to keep loop going
+            prev = curr
 
         return res
