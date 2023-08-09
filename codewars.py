@@ -318,3 +318,14 @@ def first_non_repeating_letter(s):
 
 def domain_name(url):
     return url.split("//")[-1].split("www.")[-1].split(".")[0]
+
+
+
+# Complete the solution so that it reverses the string passed into it.
+
+# 'world'  =>  'dlrow'
+# 'word'   =>  'drow'
+
+
+def solution(string):
+    return string[ :: -1]
