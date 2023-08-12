@@ -91,3 +91,11 @@ def DNA_strand(dna):
     dna_pal = {'A': 'T', 'T': 'A', 'G' : 'C', 'C' : 'G'}
     res = [dna_pal[x] for x in dna]
     return ''.join(res)
+
+
+# Code as fast as you can! You need to double the integer and return it.
+
+
+
+def double_integer(i):
+    return i * 2
