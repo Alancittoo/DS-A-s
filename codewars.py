@@ -353,3 +353,27 @@ def string_to_number(s):
 
 def greet(name):
     return f"Hello, {name} how are you doing today?"
+
+
+# You are given a node that is the beginning of a linked list. This list contains a dangling piece and a loop. Your objective is to determine the length of the loop.
+
+# For example in the following picture the size of the dangling piece is 3 and the loop size is 12:
+
+def loop_size(node):
+    x = node
+    xn = node
+
+    while xn is not None and xn.next is not None:
+        x = x.next
+        xn = xn.next.next
+
+        if x == xn:
+            # Count the length of the loop
+            length = 1
+            x = x.next
+            while x != xn:
+                x = x.next
+                length += 1
+            return length
+
+    return 0
