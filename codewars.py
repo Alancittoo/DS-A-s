@@ -543,3 +543,29 @@ def pell(n):
     for i in range(2, n + 1):
         pell_n.append(2 * pell_n[i-1] + pell_n[i-2])
     return pell_n[n]
+
+
+# Complete the function scramble(str1, str2) that returns true if a portion of str1 characters can be rearranged to match str2, otherwise returns false.
+
+# Notes:
+
+# Only lower case letters will be used (a-z). No punctuation or digits will be included.
+# Performance needs to be considered.
+# Examples
+# scramble('rkqodlw', 'world') ==> True
+# scramble('cedewaraaossoqqyt', 'codewars') ==> True
+# scramble('katas', 'steak') ==> False
+
+def scramble(s1,s2):
+    dct={}
+    for l in s1:
+        if l not in dct:
+            dct[l]=1
+        else:
+            dct[l] += 1
+    for l in s2:
+        if l not in dct or dct[1] < 1:
+            return False
+        else:
+            dct[l] -= 1
+        return True
